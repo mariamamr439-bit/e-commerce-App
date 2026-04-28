@@ -1,0 +1,112 @@
+<div class="bg-linear-to-br from-emerald-600 via-emerald-500 to-emerald-400 text-white">
+  <div class="container mx-auto px-4 py-10 sm:py-14">
+    <nav class="flex items-center gap-2 text-sm text-white/70 mb-6 flex-wrap">
+      <a class="hover:text-white transition-colors" routerLink="/home">Home</a
+      ><span class="text-white/40">/</span
+      ><a class="hover:text-white transition-colors" routerLink="/brands">Brands</a
+      ><span class="text-white/40">/</span
+      ><span class="text-white font-medium">{{ brandDetails().name }}</span>
+    </nav>
+    <div class="flex items-center gap-5">
+      <div
+        class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl ring-1 ring-white/30"
+      >
+        <img
+          [alt]="brandDetails().name"
+          class="w-10 h-10 object-contain"
+          [src]="brandDetails().image"
+        />
+      </div>
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">{{ brandDetails().name }}</h1>
+        <p class="text-white/80 mt-1">Shop {{ brandDetails().name }} products</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 py-5 lg:grid-cols-5 gap-4 sm:gap-6">
+  @for (product of products(); track product._id) {
+    <div
+      id="product-card"
+      class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+    >
+      <div class="relative">
+        <img
+          class="w-full h-60 object-contain bg-white p-4"
+          [alt]="product.title"
+          [src]="product.imageCover"
+        />
+        <div class="absolute top-3 right-3 flex flex-col space-y-2">
+          <button
+            (click)="addToWishlist(product._id)"
+            class="bg-white/90 backdrop-blur-sm h-8 w-8 cursor-pointer rounded-full flex items-center justify-center transition shadow-sm text-gray-600 hover:text-red-500 hover:bg-white"
+            title="Add to wishlist"
+            tabindex="0"
+          >
+            <i class="far fa-heart text-sm"></i>
+          </button>
+          <button
+            class="bg-white/90 cursor-pointer backdrop-blur-sm h-8 w-8 rounded-full flex items-center justify-center text-gray-600 hover:text-primary-600 hover:bg-white shadow-sm"
+            title="Compare"
+          >
+            <i class="fas fa-arrows-rotate text-sm"></i>
+          </button>
+          <a
+            [routerLink]="['/details', product.slug, product._id]"
+            class="bg-white/90 cursor-pointer backdrop-blur-sm h-8 w-8 rounded-full flex items-center justify-center text-gray-600 hover:text-primary-600 hover:bg-white shadow-sm"
+            title="Quick view"
+          >
+            <i class="far fa-eye text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="text-xs text-gray-500 mb-1">{{ product.category?.name || 'Products' }}</div>
+        <h3 class="font-medium mb-1 cursor-pointer line-clamp-2 min-h-10">
+          <a
+            [routerLink]="['/products', product._id]"
+            class="hover:text-primary-600 transition-colors"
+          >
+            {{ product.title }}
+          </a>
+        </h3>
+        <div class="flex items-center mb-2">
+          <div class="flex text-amber-400 mr-2">
+            @for (star of [1, 2, 3, 4, 5]; track star) {
+              @if (star <= (product.ratingsAverage || 0)) {
+                <i class="fas fa-star text-yellow-400 text-xs"></i>
+              } @else {
+                <i class="far fa-star text-yellow-400 text-xs"></i>
+              }
+            }
+          </div>
+          <span class="text-xs text-gray-500"
+            >{{ product.ratingsAverage || 0 }} ({{ product.ratingsQuantity || 0 }})</span
+          >
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-lg font-bold text-gray-800">{{ product.price | currency: 'GBP'}}</span>
+            @if (product.priceAfterDiscount) {
+              <span class="text-xs text-gray-400 line-through ml-2">{{ product.price | currency: 'GBP'}} </span>
+            }
+          </div>
+          <button
+            (click)="addProduct(product._id)"
+            class="w-10 h-10 cursor-pointer bg-emerald-600 text-white rounded-lg flex items-center justify-center hover:bg-emerald-700 transition-colors shadow-sm active:scale-95"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+@if (products().length === 0) {
+  <div class="text-center py-10">
+    <i class="fas fa-box-open text-4xl text-gray-400 mb-3"></i>
+    <p class="text-gray-500">No products found for {{ brandDetails().name }}</p>
+  </div>
+}

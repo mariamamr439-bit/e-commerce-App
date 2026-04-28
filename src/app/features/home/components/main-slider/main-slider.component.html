@@ -1,0 +1,119 @@
+<section>
+  <!-- slider -->
+
+  <swiper-container class="mySwiper" [loop]="true" navigation="true" [pagination]="{
+    clickable:'true',
+  }">
+    <swiper-slide>
+      <div class="h-100 flex items-center item">
+        <div class="w-full px-15 text-white space-y-4">
+          <h2 class="text-3xl font-bold max-w-96">Fresh Products Delivered to your Door</h2>
+          <p class="font-semibold">Get 20% off your first order</p>
+          <div class="mt-4" style="opacity: 1; transform: none">
+            <a
+              class="btn bg-white border-2 border-white/50 text-green-500 inline-block px-6 py-2 rounded font-semibold hover:scale-105 transition-transform"
+              >Shop Now</a
+            ><a
+              class="btn bg-transparent border-2 border-white/50 text-white ml-2 inline-block px-6 py-2 rounded font-semibold hover:scale-105 transition-transform"
+              >View Deals</a
+            >
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="h-100 flex items-center item">
+        <div class="w-full px-15 text-white space-y-4">
+          <h2 class="text-3xl font-bold max-w-96">Premium Quality Guaranteed</h2>
+          <p class="font-semibold">Fresh from farm to your table</p>
+          <div class="mt-4" style="opacity: 1; transform: none">
+            <a
+              class="btn bg-white border-2 border-white/50 text-blue-500 inline-block px-6 py-2 rounded font-semibold hover:scale-105 transition-transform"
+              >Shop Now</a
+            ><a
+              class="btn bg-transparent border-2 border-white/50 text-white ml-2 inline-block px-6 py-2 rounded font-semibold hover:scale-105 transition-transform"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="h-100 flex items-center item">
+        <div class="w-full px-15 text-white space-y-4">
+          <h2 class="text-3xl font-bold max-w-96">Fast & Free Delivery</h2>
+          <p class="font-semibold">Same day delivery available</p>
+          <div class="mt-4" style="opacity: 1; transform: none">
+            <a
+              class="btn bg-white border-2 border-white/50 text-purple-500 inline-block px-6 py-2 rounded font-semibold hover:scale-105 transition-transform"
+              >Order Now</a
+            ><a
+              class="btn bg-transparent border-2 border-white/50 text-white ml-2 inline-block px-6 py-2 rounded font-semibold hover:scale-105 transition-transform"
+              >Delivery Info</a
+            >
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    ...
+  </swiper-container>
+
+  <!-- static content -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-8 bg-gray-50">
+    <div
+      class="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm transition-hover hover:shadow-md"
+    >
+      <div
+        class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 text-blue-600 text-xl"
+      >
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm">Free Shipping</h3>
+        <p class="text-gray-500 text-xs italic">On orders over 500 EGP</p>
+      </div>
+    </div>
+
+    <div
+      class="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm transition-hover hover:shadow-md"
+    >
+      <div
+        class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 text-xl"
+      >
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm">Secure Payment</h3>
+        <p class="text-gray-500 text-xs italic">100% secure transactions</p>
+      </div>
+    </div>
+
+    <div
+      class="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm transition-hover hover:shadow-md"
+    >
+      <div
+        class="flex items-center justify-center w-12 h-12 rounded-full bg-orange-50 text-orange-600 text-xl"
+      >
+        <i class="fa-solid fa-rotate-left"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm">Easy Returns</h3>
+        <p class="text-gray-500 text-xs italic">14-day return policy</p>
+      </div>
+    </div>
+
+    <div
+      class="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm transition-hover hover:shadow-md"
+    >
+      <div
+        class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-50 text-purple-600 text-xl"
+      >
+        <i class="fa-solid fa-headset"></i>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm">24/7 Support</h3>
+        <p class="text-gray-500 text-xs italic">Dedicated support team</p>
+      </div>
+    </div>
+  </div>
+</section>
