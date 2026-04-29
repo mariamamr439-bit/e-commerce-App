@@ -8,7 +8,7 @@
     </div>
     <div class="mt-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
       @for (category of categoryList(); track category._id) {
-        <div class="item bg-white rounded p-4 text-center shadow-sm hover:shadow-md transition">
+        <a [routerLink]="['/categoryDetails' , category.slug , category._id]" class="item bg-white rounded p-4 text-center shadow-sm hover:shadow-md transition">
           <div
             class="size-20 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-3"
           >
@@ -17,7 +17,7 @@
           <div>
             <h3 class="font-medium">{{ category.name }}</h3>
           </div>
-        </div>
+        </a>
       }
     </div>
     <div class="grid md:grid-cols-2 gap-4 pt-8 font-sans bg-gray-50">

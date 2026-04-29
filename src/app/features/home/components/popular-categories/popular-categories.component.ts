@@ -1,10 +1,11 @@
 import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { CategoriesService } from '../../../../core/services/categories/categories.service';
 import { CategoriesData } from '../../../../core/models/categories-data.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-popular-categories',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './popular-categories.component.html',
   styleUrl: './popular-categories.component.css',
 })
