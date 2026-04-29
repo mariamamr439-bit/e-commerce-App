@@ -43,7 +43,6 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
 
-            // 👇 أهم سطر حل المشكلة
             "prerender": false,
 
             "security": {
