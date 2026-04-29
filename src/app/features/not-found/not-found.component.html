@@ -1,1 +1,82 @@
-<p>not-found works!</p>
+<div class="min-h-screen bg-[#fafbfc] flex items-center justify-center px-4 py-16 relative overflow-hidden">
+  <!-- Animated Background Icons -->
+  <div class="absolute inset-0 overflow-hidden">
+    <i class="fas fa-apple-whole absolute top-[10%] left-[5%] text-emerald-200 text-4xl animate-bounce opacity-50"></i>
+    <i class="fas fa-carrot absolute top-[20%] right-[10%] text-emerald-200 text-3xl animate-pulse opacity-50"></i>
+    <i class="fas fa-lemon absolute bottom-[25%] left-[8%] text-emerald-200 text-3xl animate-bounce opacity-50"></i>
+    <i class="fas fa-seedling absolute bottom-[15%] right-[15%] text-emerald-200 text-4xl animate-pulse opacity-50"></i>
+    <i class="fas fa-apple-whole absolute top-[50%] left-[15%] text-emerald-100 text-2xl animate-spin opacity-30"></i>
+    <i class="fas fa-carrot absolute top-[40%] right-[5%] text-emerald-100 text-2xl animate-bounce opacity-30"></i>
+    
+    <!-- Gradient Blurs -->
+    <div class="absolute top-0 right-0 w-125 h-125 bg-linear-to-bl from-emerald-100/40 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-100 h-100 bg-linear-to-tr from-emerald-100/30 to-transparent rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="relative z-10 max-w-xl w-full">
+    <!-- Animated Cart Icon -->
+    <div class="flex justify-center mb-10">
+      <div class="relative">
+        <div class="absolute inset-0 w-64 h-52 sm:w-72 sm:h-60 bg-emerald-100/50 rounded-4xl blur-2xl"></div>
+        <div class="relative w-64 h-52 sm:w-72 sm:h-60">
+          <div class="absolute inset-x-0 top-4 mx-auto w-52 h-40 sm:w-60 sm:h-44 bg-white rounded-3xl shadow-xl shadow-emerald-200/60 border border-gray-100 flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-linear-to-br from-primary-50/80 via-transparent to-primary-100/40"></div>
+            <i class="fas fa-cart-shopping relative text-6xl sm:text-7xl text-emerald-400/80"></i>
+          </div>
+          
+          <!-- 404 Badge -->
+          <div class="absolute -top-2 -right-2 sm:top-0 sm:right-0">
+            <div class="relative">
+              <div class="absolute -inset-2 rounded-full bg-white shadow-lg"></div>
+              <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-linear-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-primary-500/40">
+                <span class="text-xl sm:text-2xl font-emerald text-white tracking-tight">404</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Dots Indicator -->
+          <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 flex items-center justify-center gap-4">
+            <div class="w-2.5 h-2.5 rounded-full bg-primary-400"></div>
+            <div class="w-8 h-4 border-b-[3px] border-emerald-400 rounded-b-full"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Content -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl sm:text-5xl font-black text-gray-900 mb-4 tracking-tight">Oops! Nothing Here</h1>
+      <p class="text-gray-500 text-lg leading-relaxed max-w-md mx-auto">
+        Looks like this page went out of stock! Don't worry, there's plenty more fresh content to explore.
+      </p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+      <a routerLink="/home" class="group bg-emerald-600 w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary-600 hover:bg-primary-700 text-white py-4 px-8 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-xl hover:shadow-primary-600/30 hover:-translate-y-1">
+        <i class="fas fa-house group-hover:scale-110 transition-transform duration-300"></i>
+        Go to Homepage
+      </a>
+      <button (click)="goBack()" class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-700 py-4 px-8 rounded-2xl font-bold text-lg transition-all duration-300 shadow-md hover:shadow-lg border border-gray-200 hover:-translate-y-1">
+        <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform duration-300"></i>
+        Go Back
+      </button>
+    </div>
+
+    <!-- Popular Destinations -->
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+      <p class="text-center text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">Popular Destinations</p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a routerLink="/shop" class="px-5 py-2.5  rounded-xl bg-emerald-50 text-emerald-700 font-semibold text-sm hover:bg-primary-100 transition-colors">
+          All Products
+        </a>
+        <a routerLink="/categories" class="px-5 py-2.5 rounded-xl bg-gray-100 text-gray-700 font-semibold text-sm hover:bg-gray-200 transition-colors">
+          Categories
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
